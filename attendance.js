@@ -156,8 +156,11 @@ module.exports = function ({ configService, loggerService }) {
       if (dayOfWeek === 6) {
         // If it's Saturday, skip to Monday
         targetTime.setDate(targetTime.getDate() + 2);
+      } else if (dayOfWeek === 0) {
+        // If it's Sunday, skip to Monday
+        targetTime.setDate(targetTime.getDate() + 1);
       } else {
-        break; // If it's not Saturday, break out of the loop
+        break; // If it's not Saturday or Sunday, break out of the loop
       }
     }
 
