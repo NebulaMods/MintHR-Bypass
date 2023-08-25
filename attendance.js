@@ -14,7 +14,7 @@ module.exports = function ({ configService, loggerService }) {
     try {
       const response = await axios({
         method: "get",
-        url: `${url}/site/MarkAttendance`,
+        url: `${url}/SiteMain/MarkAttendance`,
         headers: getHeaders(cookies),
       });
 
