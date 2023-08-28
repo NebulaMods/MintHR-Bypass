@@ -1,7 +1,7 @@
 const readline = require("readline");
 const axios = require("axios").default;
 
-const { url } = require("./vars");
+const { loginUrl } = require("./vars");
 
 const rl = setupReadline();
 
@@ -30,7 +30,7 @@ async function login(username, password) {
 
   try {
     const response = await axios.post(
-      `${url}/SiteMain/DoLogin`,
+      `${loginUrl}/DoLogin`,
       data,
       getLoginHeaders()
     );

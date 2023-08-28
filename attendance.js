@@ -2,8 +2,7 @@ const axios = require("axios").default;
 const fs = require("fs");
 
 const { login } = require("./utils");
-const { url, logFilePath } = require("./vars");
-const { exit } = require("process");
+const { attendanceUrl, logFilePath, attendanceFilePath } = require("./vars");
 
 module.exports = function ({ configService, loggerService }) {
   async function tryMarkAttendance(timeStr, cookies) {
@@ -14,7 +13,7 @@ module.exports = function ({ configService, loggerService }) {
     try {
       const response = await axios({
         method: "get",
-        url: `${url}/SiteMain/MarkAttendance`,
+        url: `${attendanceUrl}/MarkAttendance`,
         headers: getHeaders(cookies),
       });
 
